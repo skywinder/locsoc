@@ -1,7 +1,7 @@
 require('dotenv').config();
 
-// const express = require('express');
-// const Datastore = require('nedb');
+const express = require('express');
+const Datastore = require('nedb');
 // const fetch = require('node-fetch');
 
 const api_key = process.env.API_KEY;
@@ -9,9 +9,13 @@ const api_key = process.env.API_KEY;
 
 // run bot:
 
-var tg = require('./tg');
-tg.run_bot(api_key);
+setupTG();
 
+
+function setupTG() {
+    var tg = require('./tg');
+    tg.run_bot(api_key);
+}
 //
 
 // const app = express();
