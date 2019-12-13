@@ -4,24 +4,24 @@ if ('geolocation' in navigator) {
   console.log('geolocation available');
   navigator.geolocation.getCurrentPosition(async position => {
     let lat, lon;
+    let today  = new Date();
     try {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
       document.getElementById('latitude').textContent = lat.toFixed(3);
       document.getElementById('longitude').textContent = lon.toFixed(3);
-      document.getElementById('checkin_date').textContent = Date().toLocaleDateString();
+      
+      document.getElementById('checkin_date').textContent = today.toLocaleDateString();
     } catch (error) {
       console.error(error);
-      air = { value: -1 };
-      document.getElementById('aq_value').textContent = 'NO READING';
     }
 
-    const data = { lat, lon, weather, air };
+    const data = { lat, lon };
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      },
+      }
       body: JSON.stringify(data)
     };
     const db_response = await fetch('/api', options);
