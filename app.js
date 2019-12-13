@@ -1,5 +1,5 @@
 
-var msg = "Hey, Dude";
-console.log(msg)
+console.log("fetch env")
+const api_key = process.env.API_KEY;
 
-msg.charAt(2)
+console.log(api_key)
