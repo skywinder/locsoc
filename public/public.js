@@ -11,7 +11,7 @@ if ('geolocation' in navigator) {
       document.getElementById('latitude').textContent = lat.toFixed(3);
       document.getElementById('longitude').textContent = lon.toFixed(3);
       
-      document.getElementById('checkin_date').textContent = today.toLocaleDateString();
+      document.getElementById('checkin_date').textContent = today.toLocaleString();
     } catch (error) {
       console.error(error);
     }
@@ -21,7 +21,7 @@ if ('geolocation' in navigator) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
       body: JSON.stringify(data)
     };
     const db_response = await fetch('/api', options);
