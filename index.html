@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-  </head>
-  <body>
+
+<head>
+
+</head>
+
+<body>
     <h1>Location sharing App</h1>
     <div><a href="/">enter</a> | <a href="/logs">list</a></div>
     <p>
-      latitude: <span id="latitude"></span>&deg;<br />
-      longitude: <span id="longitude"></span>&deg;
+        latitude: <span id="latitude"></span>&deg;<br />
+        longitude: <span id="longitude"></span>&deg;
     </p>
     <label for="mood">enter your mood</label>
     <input id="mood" value="rainbow" />
     <button id="submit">submit</button>
     <script src="app.js"></script>
-  </body>
+
+    <script async src="https://telegram.org/js/telegram-widget.js?7" data-telegram-login="whoiswhere_bot"
+        data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+    <script type="text/javascript">
+        function onTelegramAuth(user) {
+            alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+        }
+    </script>
+
+</body>
+
 </html>
