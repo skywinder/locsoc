@@ -7,8 +7,7 @@ const api_key = process.env.API_KEY;
 
 
 // run bot:
-
-setupTG();
+// setupTG();
 
 function setupTG() {
   var tg = require('./tg');
