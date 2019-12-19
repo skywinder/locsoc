@@ -3,7 +3,7 @@ const express = require('express');
 const Datastore = require('nedb');
 const fetch = require('node-fetch');
 
-const api_key = process.env.API_KEY;
+const TELEGRAM_BOT_TOKEN = process.env.API_KEY;
 
 // run bot:
 // setupTG();
@@ -13,7 +13,7 @@ function setupTG() {
   //fix from https://github.com/yagop/node-telegram-bot-api/issues/540
   process.env.NTBA_FIX_319 = "1";
 
-  tg.run_bot(api_key);
+  tg.run_bot(TELEGRAM_BOT_TOKEN);
 }
 //
 

@@ -3,9 +3,9 @@
 <head>
     <title>Share location bot</title>
     <style>
-        /* body {
-            background-color: #000;
-        } */
+        body {
+            background-color: #333;
+        }
 
         h1 {
             color: rgb(178, 178, 187);
@@ -14,17 +14,14 @@
     </style>
 </head>
 
-<body class="bg-black">
+<body>
     <h1>Share location with friends.</h1>
-    <div>
-        <a href="/">check in</a> | <a href="/checkins">view checkins</a>
-    </div>
     <p>
         You are at <span id="latitude"></span>&deg;,
         <span id="longitude"></span>&deg; Last read on <span id="checkin_date"></span>.
     </p>
     <script src="public.js"></script>
-</body>
+</bod>
 
 <!-- from https://core.telegram.org/widgets/login -->
 <script async src="https://telegram.org/js/telegram-widget.js?7" data-telegram-login="whoiswhere_bot"
@@ -34,5 +31,4 @@ function onTelegramAuth(user) {
     alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
 }
 </script>
-
 </html>
