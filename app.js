@@ -5,7 +5,6 @@ const fetch = require('node-fetch');
 
 const api_key = process.env.API_KEY;
 
-
 // run bot:
 // setupTG();
 
