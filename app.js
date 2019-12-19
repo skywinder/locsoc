@@ -12,7 +12,7 @@ const api_key = process.env.API_KEY;
 function setupTG() {
   var tg = require('./tg');
   //fix from https://github.com/yagop/node-telegram-bot-api/issues/540
-  process.env.NTBA_FIX_319 = 1;
+  process.env.NTBA_FIX_319 = "1";
 
   tg.run_bot(api_key);
 }
@@ -21,16 +21,6 @@ function setupTG() {
 const app = setupExpress();
 
 const database = setupDB();
-
-app.get('/api', (request, response) => {
-  database.find({}, (err, data) => {
-    if (err) {
-      response.end();
-      return;
-    }
-    response.json(data);
-  });
-});
 
 function setupDB() {
   const database = new Datastore('database.db');
@@ -55,6 +45,16 @@ function setupExpress() {
     database.insert(data);
     response.json(data);
   });
+
+  app.get('/api', (request, response) => {
+  database.find({}, (err, data) => {
+    if (err) {
+      response.end();
+      return;
+    }
+    response.json(data);
+  });
+});
 
   return app;
 }

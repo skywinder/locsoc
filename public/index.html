@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-  <head>
+
+<head>
     <title>Share location bot</title>
-  </head>
-  <body>
-    <h1>Share location bot</h1>
+    <style>
+        /* body {
+            background-color: #000;
+        } */
+
+        h1 {
+            color: rgb(178, 178, 187);
+        }
+    
+    </style>
+</head>
+
+<body class="bg-black">
+    <h1>Share location with friends.</h1>
     <div>
-      <a href="/">check in</a> | <a href="/checkins">view checkins</a>
+        <a href="/">check in</a> | <a href="/checkins">view checkins</a>
     </div>
     <p>
-      You are at <span id="latitude"></span>&deg;,
-      <span id="longitude"></span>&deg; Last read on <span id="checkin_date"></span>.
+        You are at <span id="latitude"></span>&deg;,
+        <span id="longitude"></span>&deg; Last read on <span id="checkin_date"></span>.
     </p>
     <script src="public.js"></script>
-  </body>
+</body>
+
 </html>
