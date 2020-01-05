@@ -1,2 +1,4 @@
 .env
 temp_playground.js
+.gitsecret/keys/random_seed
+!*.secret

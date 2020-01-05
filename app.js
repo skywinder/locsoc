@@ -3,10 +3,10 @@ const express = require('express');
 const Datastore = require('nedb');
 const fetch = require('node-fetch');
 
-const TELEGRAM_BOT_TOKEN = process.env.API_KEY;
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
 // run bot:
-// setupTG();
+setupTG();
 
 function setupTG() {
   var tg = require('./tg');
